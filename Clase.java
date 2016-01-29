@@ -9,8 +9,10 @@ import java.util.Collections;
  */
 public class Clase
 {
-    // Almacena los socios del club.
+    // Almacena los alumnos.
     private ArrayList<String> alumnos;
+    // Almacena las parejas.
+    private ArrayList<String> parejas;
 
     /**
      * Constructor for objects of class Clase
@@ -52,11 +54,12 @@ public class Clase
     public void emparejaAlumnos()
     {
         Collections.shuffle(alumnos);
+        parejas = new ArrayList<String>();
         int index = 0;
         int numero = 1111;        
         if (alumnos.size() > 2) {
             if (alumnos.size() % 2 != 0) {           
-                String alumno = alumnos.get(index);
+                String alumno = alumnos.get(index);                
                 index++;        
                 String alumno2 = alumnos.get(index);
                 index++; 
@@ -65,6 +68,7 @@ public class Clase
                 index++; 
                 pareja = "Pareja numero " + numero + ": " + alumno + " ---- " + alumno2 + " ---- " + alumno3;
                 System.out.println(pareja);
+                parejas.add(pareja);
                 numero++;
             }
 
@@ -74,10 +78,23 @@ public class Clase
                 String alumno2 = alumnos.get(index);        
                 String pareja = new String();      
                 pareja = "Pareja numero " + numero + ": " + alumno + " ---- " + alumno2;
+                parejas.add(pareja);
                 numero++;
                 System.out.println(pareja);
+                parejas.add(pareja);
                 index++;        
             }
         }
     }
+    
+//     /**
+//      * Introduciendo un código el programa devuelve devolver el nombre de los integrantes de la pareja (o trío) correspondiente a dicho código.
+//      */
+//     public String devuelveParejas(int codigoPareja)
+//     {
+//         for (String codigo : parejas) {
+//             
+//         }
+//         return
+//     }
 }
